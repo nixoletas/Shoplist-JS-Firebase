@@ -9,7 +9,7 @@ html, body {
 
 #lista-de-compras {
     display: flex;
-    margin-top: 150px;
+    margin-top: 80px;
     align-items: center;
     justify-content: center;
 }
