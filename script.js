@@ -22,11 +22,20 @@ deleteAllButton.addEventListener("click", function() {
 })
 
 addButtonEl.addEventListener("click", function() {
-    let inputValue = inputFieldEl.value
+    let inputValue = inputFieldEl.value.trim()
+
+    if (inputValue === "") {
+        inputFieldEl.classList.add("error")
+
+        setTimeout(() => {
+            inputFieldEl.classList.remove("error")
+        }, 250);
+
+    } else {
+        push(shoppingListInDB, inputValue)
     
-    push(shoppingListInDB, inputValue)
-    
-    clearInputEl()
+        clearInputEl()   
+    }
 })
 
 onValue(shoppingListInDB, function(snapshot) {    
@@ -56,7 +65,7 @@ function appendItemToShoppingListEl(item) {
     let newEl = document.createElement("li")
     
     newEl.textContent = itemValue
-    
+
     newEl.addEventListener("click", function() {
         let exactLocationOfItemInDB = ref(database, `shoppingList/${itemID}`)
         
