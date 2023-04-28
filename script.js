@@ -26,6 +26,7 @@ addButtonEl.addEventListener("click", function() {
 
     if (inputValue === "") {
         inputFieldEl.classList.add("error")
+        inputFieldEl.placeholder = "Digite algo..."
 
         setTimeout(() => {
             inputFieldEl.classList.remove("error")
