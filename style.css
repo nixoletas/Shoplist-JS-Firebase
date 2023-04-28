@@ -1,7 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    background-color: #1d1d1d;
+    background-color: #111111;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #430000;
     user-select: none;
@@ -75,7 +75,7 @@ button {
 html, body {
     margin: 0;
     padding: 0;
-    background-color: #272727;
+    background-color: #1a1a1a;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #ffffff;
     user-select: none;
