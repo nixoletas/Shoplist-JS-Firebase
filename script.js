@@ -14,14 +14,24 @@ const addButtonEl = document.getElementById("add-button")
 const shoppingListEl = document.getElementById("shopping-list")
 const deleteAllButton = document.getElementById("delete-all")
 
+// Add event listener to input field to detect Enter key press
+inputFieldEl.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    addItem();
+  }
+});
+
 deleteAllButton.addEventListener("click", function() {
     
     remove(shoppingListInDB);
     
     clearInputEl()
+    inputFieldEl.focus(); // Set focus back to input field
 })
 
-addButtonEl.addEventListener("click", function() {
+addButtonEl.addEventListener("click", addItem);
+
+function addItem() {
     let inputValue = inputFieldEl.value.trim()
 
     if (inputValue === "") {
@@ -35,9 +45,10 @@ addButtonEl.addEventListener("click", function() {
     } else {
         push(shoppingListInDB, inputValue)
     
-        clearInputEl()   
+        clearInputEl();
+        inputFieldEl.focus(); // Set focus back to input field
     }
-})
+}
 
 onValue(shoppingListInDB, function(snapshot) {    
     if (snapshot.exists()) {
@@ -75,3 +86,5 @@ function appendItemToShoppingListEl(item) {
     
     shoppingListEl.append(newEl)
 }
+
+inputFieldEl.focus(); // Set focus on input field when the page loads
