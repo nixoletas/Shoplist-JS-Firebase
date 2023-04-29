@@ -40,7 +40,7 @@ function addItem() {
 
         setTimeout(() => {
             inputFieldEl.classList.remove("error")
-        }, 250);
+        }, 10);
 
     } else {
         push(shoppingListInDB, inputValue)
