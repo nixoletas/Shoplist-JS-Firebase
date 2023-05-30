@@ -1,6 +1,6 @@
 # It's actually Shopping-JS-Firebase
 ### a simple shopping list with CREATE and DELETE functionality using Firebase and Vanilla JS
-you can go to the DEMO app and add your item to our list haha:
+you can go to the DEMO app and add your item to our list, it's a universal database haha:
 
 https://lista-de-compras-nick.netlify.app
 
