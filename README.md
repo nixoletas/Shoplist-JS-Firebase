@@ -1,6 +1,5 @@
 # Shoplist-JS-Firebase
 ### a simple shoplist with CREATE and DELETE functionality using Firebase and Vanilla JS
-#### note
 you can go to the DEMO app and add your item to our Shoplist haha:
 https://lista-de-compras-nick.netlify.app
 
