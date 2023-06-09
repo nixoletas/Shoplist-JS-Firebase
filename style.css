@@ -159,3 +159,11 @@ ul li:hover {
     color: #ccc;
     box-shadow: none;
 }
+
+#shopping-list {
+    max-width: 320px;
+    font-weight: bold;
+    margin: 30px auto;
+    color:rgb(198, 198, 198);
+    gap: 10px;
+}

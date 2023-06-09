@@ -27,13 +27,13 @@ const addButtonEl = document.getElementById("add-button")
 const shoppingListEl = document.getElementById("shopping-list")
 const deleteAllButton = document.getElementById("delete-all")
 
-inputFieldEl.addEventListener("keydown", function(event) {
-  if (event.key === "Enter") {
+inputFieldEl.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
     addItem();
   }
 });
 
-deleteAllButton.addEventListener("click", function() {
+deleteAllButton.addEventListener("click", () => {
     
     remove(shoppingListInDB);   
     clearInputEl()
@@ -61,7 +61,7 @@ function addItem() {
     }
 }
 const loadingList = document.getElementById("loading-list");
-onValue(shoppingListInDB, function(snapshot) {  
+onValue(shoppingListInDB, (snapshot) => {  
       
     if (snapshot.exists()) {
         let itemsArray = Object.entries(snapshot.val())
@@ -75,7 +75,7 @@ onValue(shoppingListInDB, function(snapshot) {
         } 
     } else {
         loadingList.style.display = "none";
-        shoppingListEl.innerHTML = "Nenhum item na lista... ainda"
+        shoppingListEl.innerText = "Nenhum item na lista... ainda"
     }
 })
 
@@ -86,12 +86,10 @@ function clearInputEl() {
 function appendItemToShoppingListEl(item) {
     let itemID = item[0]
     let itemValue = item[1]
-    
-    let newEl = document.createElement("li")
-    
-    newEl.textContent = itemValue
 
-    newEl.addEventListener("click", function() {
+    let newEl = document.createElement("li")
+    newEl.textContent = itemValue
+    newEl.addEventListener("click", () => {
         let exactLocationOfItemInDB = ref(database, `shoppingList/${itemID}`)
         
         remove(exactLocationOfItemInDB)
