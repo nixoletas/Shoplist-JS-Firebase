@@ -157,4 +157,5 @@ ul li:hover {
     height: 100%;
     font-weight: bold;
     color: #ccc;
+    box-shadow: none;
 }
