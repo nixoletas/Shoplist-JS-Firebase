@@ -148,3 +148,13 @@ ul li:hover {
     background-color: #FFECC7;
     cursor: pointer;
 }
+
+#loading-list li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    height: 100%;
+    font-weight: bold;
+    color: #ccc;
+}

@@ -49,11 +49,12 @@ function addItem() {
         inputFieldEl.focus(); // Set focus back to input field
     }
 }
-
-onValue(shoppingListInDB, function(snapshot) {    
+const loadingList = document.getElementById("loading-list");
+onValue(shoppingListInDB, function(snapshot) {  
+      
     if (snapshot.exists()) {
         let itemsArray = Object.entries(snapshot.val())
-    
+        loadingList.style.display = "none";
         shoppingListEl.innerHTML = ""
         
         for (let i = 0; i < itemsArray.length; i++) {
