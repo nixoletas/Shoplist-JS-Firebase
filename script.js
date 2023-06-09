@@ -74,6 +74,7 @@ onValue(shoppingListInDB, function(snapshot) {
             appendItemToShoppingListEl(currentItem)
         } 
     } else {
+        loadingList.style.display = "none";
         shoppingListEl.innerHTML = "Nenhum item na lista... ainda"
     }
 })
