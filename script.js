@@ -1,3 +1,16 @@
+console.log(`%c  
+
+         888
+         888        
+.d8888b  88888b.  88888888 88888b.  
+88K      888 "88b 88888888 888 "88b 
+"Y8888b. 888  888 88    88 888  888
+     X88 888  888 88888888 888 d88P 
+888888P' 888  888 88888888 88888P"  
+                           888      
+                           888      
+                            `, "font-family:monospace; color: orange;");
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
 import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
@@ -14,7 +27,6 @@ const addButtonEl = document.getElementById("add-button")
 const shoppingListEl = document.getElementById("shopping-list")
 const deleteAllButton = document.getElementById("delete-all")
 
-// Add event listener to input field to detect Enter key press
 inputFieldEl.addEventListener("keydown", function(event) {
   if (event.key === "Enter") {
     addItem();
@@ -23,10 +35,9 @@ inputFieldEl.addEventListener("keydown", function(event) {
 
 deleteAllButton.addEventListener("click", function() {
     
-    remove(shoppingListInDB);
-    
+    remove(shoppingListInDB);   
     clearInputEl()
-    inputFieldEl.focus(); // Set focus back to input field
+    inputFieldEl.focus();
 })
 
 addButtonEl.addEventListener("click", addItem);
@@ -46,7 +57,7 @@ function addItem() {
         push(shoppingListInDB, inputValue)
     
         clearInputEl();
-        inputFieldEl.focus(); // Set focus back to input field
+        inputFieldEl.focus();
     }
 }
 const loadingList = document.getElementById("loading-list");
@@ -87,5 +98,3 @@ function appendItemToShoppingListEl(item) {
     
     shoppingListEl.append(newEl)
 }
-
-inputFieldEl.focus(); // Set focus on input field when the page loads
