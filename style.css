@@ -162,7 +162,7 @@ ul li:hover {
 
 #shopping-list {
     max-width: 320px;
-    font-weight: bold;
+    font-weight: normal;
     margin: 30px auto;
     color:rgb(198, 198, 198);
     gap: 10px;
